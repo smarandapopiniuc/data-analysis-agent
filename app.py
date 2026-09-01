@@ -74,20 +74,21 @@ FIRST 5 ROWS SAMPLE:
             
             data_summary = build_summary(df)
             
-            prompt = f"""You are a senior data analyst. A user has uploaded a CSV dataset and wants you to perform the following analysis: {analysis_type}
+            prompt = f"""You are a senior data analyst presenting findings to a non-technical business audience. A user has uploaded a CSV dataset and wants you to perform the following analysis: {analysis_type}
 
 Here is the dataset information:
 {data_summary}
 
-Please provide a clear, structured analysis that a business stakeholder could understand. 
+Please provide a clear, structured analysis that any business stakeholder could understand.
+Important: write in plain business language only — no code snippets, no technical syntax, no DataFrame operations.
 Include:
 1. What this dataset appears to be about
-2. Data quality observations (missing values, anomalies, data types)
+2. Data quality observations in plain language
 3. Key patterns or insights you can identify
-4. 2-3 concrete business recommendations or next steps
-5. What additional data or analysis would add value
+4. 2-3 concrete business recommendations with clear next steps
+5. What additional data would add value
 
-Be specific, use the actual column names and numbers from the data, and write as if presenting to a client."""
+Be specific, use the actual column names and numbers from the data, and write as if presenting to a CEO or department head who has no technical background."""
 
             message = client.messages.create(
                 model="claude-sonnet-4-6",
