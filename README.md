@@ -67,3 +67,8 @@ Data & AI Analyst | Brussels, Belgium
 ## 📄 Licence
 
 MIT — free to use and adapt with attribution.
+
+## Versions
+- v1 — CSV upload with Pandas (current) — `main` branch
+- v2 — Database connector (PostgreSQL) — coming soon
+- v3 — Large dataset support with Polars — coming soon
